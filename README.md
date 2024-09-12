@@ -1,6 +1,6 @@
 # Assignment3: Randomized Quicksort and Hashing with Chaining
 
-## This project implements and analyzes the performance of Randomized Quicksort and a Hash Table with Chaining. Both algorithms are compared based on theoretical analysis and empirical testing.
+This project implements and analyzes the performance of Randomized Quicksort and a Hash Table with Chaining. Both algorithms are compared based on theoretical analysis and empirical testing.
 
 ## Required Libraries
 - python 3.x
