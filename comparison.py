@@ -27,7 +27,7 @@ def compare_algorithms():
         deterministic_quicksort(arr.copy())
         print(f"Deterministic Quicksort for {size} elements: {time.time() - start:.6f} seconds")
 
-# Run the comparison when the script is executed
+# Running the comparing when the script is executed
 if __name__ == "__main__":
     compare_algorithms()
 
