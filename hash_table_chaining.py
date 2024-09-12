@@ -7,7 +7,7 @@ class HashTable:
     def hash_function(self, key):
         return hash(key) % self.size
 
-    # Insert key-value pair
+    # Inserting key-value pair
     def insert(self, key, value):
         index = self.hash_function(key)
         for i, (k, v) in enumerate(self.table[index]):
@@ -16,7 +16,7 @@ class HashTable:
                 return
         self.table[index].append((key, value))
 
-    # Search for value associated with a key
+    # Searching for value associated with a key
     def search(self, key):
         index = self.hash_function(key)
         for k, v in self.table[index]:
@@ -24,7 +24,7 @@ class HashTable:
                 return v
         return None
 
-    # Delete key-value pair
+    # Deleting key-value pair
     def delete(self, key):
         index = self.hash_function(key)
         for i, (k, v) in enumerate(self.table[index]):
