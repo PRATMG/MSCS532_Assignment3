@@ -6,7 +6,7 @@ This report provides analysis of the average-case time complexity of the Randomi
 
 - [Randomized Quicksort Implementation](./randomized_quicksort.py)
 
-# Sorting Output
+# randomized_quicksort.py Output:
 
 | **Array Type**                 | **Before Sorting**           | **After Sorting**            |
 |---------------------------------|------------------------------|------------------------------|
@@ -15,11 +15,6 @@ This report provides analysis of the average-case time complexity of the Randomi
 | Reverse-sorted array            | `[5, 4, 3, 2, 1]`            | `[1, 2, 3, 4, 5]`            |
 | Array with repeated elements    | `[2, 2, 2, 2, 2]`            | `[2, 2, 2, 2, 2]`            |
 | Random array                    | `[12, 3, 5, 7, 19, 4]`       | `[3, 4, 5, 7, 12, 19]`       |
-
-## Links to Other Files
-
-
-- [Hash Table Implementation](./hash_table_chaining.py)
 
 
 ## 1. Key Idea of Randomized Quicksort
