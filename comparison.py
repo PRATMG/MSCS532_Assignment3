@@ -1,6 +1,3 @@
-import random
-import time
-
 """
 This comparison.py compares the performance of Iterative Randomized Quicksort and Iterative Deterministic Quicksort on different input distributions: 
 randomly generated arrays, already sorted arrays, reverse-sorted arrays, and arrays with repeated elements. 
@@ -12,6 +9,9 @@ also observe and analyze the differences in running times, especially in edge ca
 Deterministic Quicksort may experience poor performance due to unbalanced partitions. 
 Randomized Quicksort is expected to maintain consistent performance because of its randomized pivot selection, avoiding worst-case behavior.
 """
+
+import random
+import time
 
 # Iterative Randomized Quicksort with random pivot
 def randomized_quicksort_iterative(arr, low, high):
