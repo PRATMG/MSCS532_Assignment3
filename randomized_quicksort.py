@@ -43,32 +43,37 @@ def partition(arr, low, high):
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1  # Return the pivot index
 
-# Test function to handle edge cases
+# Test function to handle edge cases and print arrays before and after sorting
 def test_randomized_quicksort():
     # Case 1: Empty array
     arr_empty = []
+    print(f"Before sorting empty array: {arr_empty}")
     randomized_quicksort(arr_empty, 0, len(arr_empty) - 1)
-    print(f"Sorted empty array: {arr_empty}")
+    print(f"After sorting empty array: {arr_empty}\n")
     
     # Case 2: Already sorted array
     arr_sorted = [1, 2, 3, 4, 5]
+    print(f"Before sorting already sorted array: {arr_sorted}")
     randomized_quicksort(arr_sorted, 0, len(arr_sorted) - 1)
-    print(f"Sorted already sorted array: {arr_sorted}")
+    print(f"After sorting already sorted array: {arr_sorted}\n")
     
     # Case 3: Reverse-sorted array
     arr_reverse = [5, 4, 3, 2, 1]
+    print(f"Before sorting reverse-sorted array: {arr_reverse}")
     randomized_quicksort(arr_reverse, 0, len(arr_reverse) - 1)
-    print(f"Sorted reverse-sorted array: {arr_reverse}")
+    print(f"After sorting reverse-sorted array: {arr_reverse}\n")
     
     # Case 4: Array with repeated elements
     arr_repeated = [2, 2, 2, 2, 2]
+    print(f"Before sorting array with repeated elements: {arr_repeated}")
     randomized_quicksort(arr_repeated, 0, len(arr_repeated) - 1)
-    print(f"Sorted array with repeated elements: {arr_repeated}")
+    print(f"After sorting array with repeated elements: {arr_repeated}\n")
     
     # Case 5: Random array
     arr_random = [12, 3, 5, 7, 19, 4]
+    print(f"Before sorting random array: {arr_random}")
     randomized_quicksort(arr_random, 0, len(arr_random) - 1)
-    print(f"Sorted random array: {arr_random}")
+    print(f"After sorting random array: {arr_random}\n")
 
 # Run tests
 test_randomized_quicksort()
