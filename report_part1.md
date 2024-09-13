@@ -4,6 +4,24 @@
 The average-case time complexity of Randomized Quicksort is O(nlogn). This is demonstrate by analyzing the expected number of comparisons made during the execution of the algorithm.
 This report provides analysis of the average-case time complexity of the Randomized Quicksort algorithm, which is O(n log n). The analysis will use indicator random variables to demonstrate the expected number of comparisons performed during the execution of Randomized Quicksort.
 
+- [Randomized Quicksort Implementation](./randomized_quicksort.py)
+
+# Sorting Output
+
+| **Array Type**                 | **Before Sorting**           | **After Sorting**            |
+|---------------------------------|------------------------------|------------------------------|
+| Empty array                     | `[]`                         | `[]`                         |
+| Already sorted array            | `[1, 2, 3, 4, 5]`            | `[1, 2, 3, 4, 5]`            |
+| Reverse-sorted array            | `[5, 4, 3, 2, 1]`            | `[1, 2, 3, 4, 5]`            |
+| Array with repeated elements    | `[2, 2, 2, 2, 2]`            | `[2, 2, 2, 2, 2]`            |
+| Random array                    | `[12, 3, 5, 7, 19, 4]`       | `[3, 4, 5, 7, 12, 19]`       |
+
+## Links to Other Files
+
+
+- [Hash Table Implementation](./hash_table_chaining.py)
+
+
 ## 1. Key Idea of Randomized Quicksort
 Randomized Quicksort works similarly to standard Quicksort but selects the pivot randomly. This random selection ensures that, on average, the partitioning process is balanced, preventing the worst-case (O(n^2)) behavior. As described in the book, *if, at each level of recursion, the partitioning procedure places a constant fraction of the elements on either side of the pivot, the recursion tree has a depth of Θ(log n), and the work done at each level is (O(n))* (Cormen et al., 2022, p. 194). This results in an expected running time of (O(n log n)).
 
