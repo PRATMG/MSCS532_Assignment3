@@ -1,8 +1,11 @@
-# Analysis of Hash Table Operations with Chaining
+# Part 2: Analysis of Hash Table Operations with Chaining
 Part 2 contains the implementation of the hash table using chaining for collision resolution.
 
+
 - [Here is the hash_table_chaining.py](./hash_table_chaining.py)
+
 ## The sample output has been tabulated below for clear understanding.
+
 ### Hash Table After Insertion
 
 | Slot | Contents                               |
@@ -42,39 +45,39 @@ Part 2 contains the implementation of the hash table using chaining for collisio
 | 9    | [('mango', 5)]                         |
 
 
-## Expected Time for Search, Insert, and Delete Operations
 
-Using **simple uniform hashing**, the expected time complexity for **search**, **insert**, and **delete** operations is \(O(1 + \\alpha)\), where \( \\alpha = \\frac{n}{m} \) is the **load factor** (Cormen et al., 2022, p. 279). Let's break this down further with reference to the output of the hash table implementation.
+## Analysis of Hash Table Operations with Output
 
-### 1. Insert:
-In the output, keys like 'apple', 'banana', and 'grape' were inserted successfully. The insert operation runs in \(O(1 + \\alpha)\), where the time to calculate the hash is constant, and the traversal time to check or append within a slot is proportional to the number of elements in that slot. For example, in slot 5, we see both 'apple' and 'banana', demonstrating how chaining handles collisions effectively. Even with two elements in a single slot, the operation remains efficient.
+Based on the output of the hash table using chaining, we observe how collisions are handled and the efficiency of the **search**, **insert**, and **delete** operations.
 
-### 2. Search:
-In the search results, the hash table finds 'apple' and 'banana' in constant time. For a non-existing key like 'cherry', the function returns None, confirming that search still runs in \(O(1 + \\alpha)\) even when the key is not found. The time complexity for search depends on the length of the linked list in each slot. In the output, each slot contains only one or two elements, so the search remains fast.
+### Expected Time for Search, Insert, and Delete
 
-### 3. Delete:
-Deleting 'banana' from slot 5 demonstrates that the delete operation also runs in \(O(1 + \\alpha)\). After the deletion, 'banana' is removed, and only 'apple' remains in the slot, showing that deletion works efficiently even when collisions occur.
+Under **simple uniform hashing**, where keys are evenly distributed across slots, the expected time complexity for operations is $O(1 + \alpha)$, where $\alpha$ is the **load factor** ($\alpha = \frac{n}{m}$)  (Cormen et al., 2022, p. 278):
 
-## Impact of the Load Factor (\( \\alpha \))
+1. **Search**: In the output, searching for "apple" and "banana" was efficient, both found in the same slot. The expected search time is $O(1 + \alpha)$, where we compute the hash and traverse a short linked list, as observed with multiple elements in slot 5.
 
-The **load factor** \( \\alpha = \\frac{n}{m} \) determines the average number of elements per slot. In the output, we have a hash table with 10 slots and 5 elements, so the load factor is \( \\alpha = \\frac{5}{10} = 0.5 \).
+2. **Insert**: The insertion time is also $O(1 + \alpha)$. In the output, inserting "apple", "banana", and others resulted in no significant delays, even with two elements colliding into slot 5.
 
-- **Low \( \\alpha \)**: With a low load factor, most slots contain 0 or 1 element, as shown in the output. This keeps operations fast, as each slot requires minimal traversal.
-- **High \( \\alpha \)**: As \( \\alpha \) increases, more elements collide into the same slots, increasing the time complexity for operations. However, in this case, the load factor is low, so search, insert, and delete remain efficient.
+3. **Delete**: Deletion is performed by finding the key in the linked list and removing it. After deleting "banana", we see the remaining elements in slot 5, with the operation completed in $O(1 + \alpha)$ time.
 
-## Strategies to Maintain a Low Load Factor
+## Impact of Load Factor ($\alpha$)
 
-### 1. Dynamic Resizing:
-If the load factor grows too high (typically above 0.75), dynamic resizing helps keep operations efficient. When resizing, the number of slots \(m\) is increased, and all elements are rehashed into the new table. In the current output, resizing is unnecessary since the load factor is low (\( \\alpha = 0.5 \)).
+The **load factor** $\alpha = \frac{n}{m}$ impacts performance:
+- **Low $\alpha$**: In the output, the load factor is $\alpha = \frac{6}{10} = 0.6$, which keeps operations efficient since most slots are either empty or contain only one or two elements.
+- **High $\alpha$**: As $\alpha$ increases, more collisions occur, causing longer linked lists and slower operations, approaching $O(n)$ in the worst case.
 
-### 2. Effective Hash Function:
-The output shows good distribution of keys across slots, thanks to a hash function that spreads keys evenly. Slots 2, 3, 5, and 6 contain elements, while the others are empty, indicating minimal collisions. A well-designed hash function, as seen here, helps reduce clustering and ensures that operations remain efficient.
+## Strategies to Maintain Low Load Factor and Minimize Collisions
+
+- **Dynamic Resizing**: When the load factor exceeds a certain threshold (e.g., $\alpha > 0.75$), the hash table should be resized, increasing the number of slots $m$ and rehashing all elements to maintain efficient operations.
+
+- **Effective Hash Function**: Using a well-designed hash function, such as one from a **universal hash function family**, can help spread keys uniformly across slots, reducing the likelihood of collisions (Cormen et al., 2022, p. 277).
 
 ## Conclusion
 
-The operations of the hash table (insert, search, and delete) run with an expected time complexity of \(O(1 + \\alpha)\), where the load factor \( \\alpha \) reflects the average number of elements per slot. In this example, the low load factor (\( \\alpha = 0.5 \)) ensures that all operations perform efficiently. As more elements are added, dynamic resizing and careful hash function design are crucial strategies to maintain this efficiency.
+The observed hash table operations demonstrate expected time complexities of $O(1 + \alpha)$. Keeping the load factor low through dynamic resizing and good hash function design ensures that the hash table remains efficient, even as more elements are added.
 
 ---
 
 ## References
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). MIT Press.
+- Wikibooks. (2023). LaTeX/Mathematics. Retrieved from https://en.wikibooks.org/wiki/LaTeX/Mathematics
