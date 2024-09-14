@@ -38,7 +38,7 @@ This [report](report_part2.md) analyzes the performance of the **Hashing with Ch
 ## Summary of the Assignment
 
 ### Part 1: Randomized Quicksort
-The **Randomized Quicksort** algorithm is analyzed both theoretically and empirically. Randomization ensures that the average-case time complexity remains \(O(n \log n)\), while Deterministic Quicksort suffers from \(O(n^2)\) behavior for already sorted or reverse-sorted arrays.
+The **Randomized Quicksort** algorithm is analyzed both theoretically and empirically. Randomization ensures that the average-case time complexity remains \(O(n log n)\), while Deterministic Quicksort suffers from \(O(n^2)\) behavior for already sorted or reverse-sorted arrays.
 
 ### Part 2: Hashing with Chaining
 The **Hashing with Chaining** implementation is evaluated based on its performance in search, insert, and delete operations. We discuss the effect of the load factor on time complexity and the importance of using a good hash function to minimize collisions. Dynamic resizing is also recommended to keep the load factor low.
@@ -47,4 +47,5 @@ The **Hashing with Chaining** implementation is evaluated based on its performan
 The code requires the following Python libraries:
 - `random` (for generating random input arrays in `comparison.py` and `randomized_quicksort.py`)
 - `time` (for benchmarking in `comparison.py`)
+
 Feel free to explore the repository and run the files to see how each algorithm performs in different scenarios!
