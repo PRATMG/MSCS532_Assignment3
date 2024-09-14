@@ -1,62 +1,79 @@
+"""
+This program implements a hash table using chaining for collision resolution. 
+A hash table maps keys to values using a hash function that calculates an index for each key.
+ In cases where multiple keys map to the same index, we resolve these collisions using linked
+lists (chaining). This implementation supports three key operations: insert, search, and delete.
+ The hash function uses the modulo operation to distribute the keys uniformly across the slots. 
+ By doing so, the hash table efficiently handles collisions, ensuring minimal time complexity for
+common operations.
+"""
 
 class HashTable:
     def __init__(self, size):
+        # Initialize the hash table with empty lists for each slot (for chaining)
         self.size = size
         self.table = [[] for _ in range(size)]
     
-    # Simple hash function using modulo
     def hash_function(self, key):
+        # Hash function to compute the index based on the key
         return hash(key) % self.size
 
-    # Insert key-value pair
     def insert(self, key, value):
+        # Insert or update a key-value pair
         index = self.hash_function(key)
         for i, (k, v) in enumerate(self.table[index]):
             if k == key:
-                self.table[index][i] = (key, value)
+                self.table[index][i] = (key, value)  # Update if key exists
                 return
-        self.table[index].append((key, value))
+        self.table[index].append((key, value))  # Append if key doesn't exist
 
-    # Search for value associated with a key
     def search(self, key):
+        # Search for a key and return its value, or None if not found
         index = self.hash_function(key)
         for k, v in self.table[index]:
             if k == key:
                 return v
-        return None
+        return None  # Key not found
 
-    # Delete key-value pair
     def delete(self, key):
+        # Delete a key-value pair and return True if successful, False otherwise
         index = self.hash_function(key)
         for i, (k, v) in enumerate(self.table[index]):
             if k == key:
-                del self.table[index][i]
+                del self.table[index][i]  # Remove the key-value pair
                 return True
-        return False
+        return False  # Key not found
 
-# Test block to check the functionality of the HashTable class
+    def display(self):
+        # Display the hash table contents
+        for i, slot in enumerate(self.table):
+            print(f"Slot {i}: {slot}")
+
+# Example usage
 if __name__ == "__main__":
-    # Create a hash table with 10 slots
-    ht = HashTable(10)
+    ht = HashTable(10)  # Create a hash table with 10 slots
 
-    # Insert some key-value pairs
-    ht.insert("apple", 10)
-    ht.insert("banana", 20)
-    ht.insert("grape", 30)
+    # Insert key-value pairs
+    ht.insert("apple", 1)
+    ht.insert("banana", 2)
+    ht.insert("grape", 3)
+    ht.insert("orange", 4)
+    ht.insert("mango", 5)
 
-    # Print hash table state after insertions
-    print("Hash Table after insertions:")
-    print(ht.table)
+    # Display the hash table
+    print("Hash Table After Insertion:")
+    ht.display()
 
-    # Search for a key
-    print("\nSearch for 'apple':", ht.search("apple"))
-    print("Search for 'banana':", ht.search("banana"))
-    print("Search for 'orange' (not present):", ht.search("orange"))
+    # Search for keys
+    print("\nSearch Results:")
+    print(f"Search for 'apple': {ht.search('apple')}")
+    print(f"Search for 'banana': {ht.search('banana')}")
+    print(f"Search for 'cherry' (not present): {ht.search('cherry')}")
 
     # Delete a key
-    print("\nDelete 'banana':", ht.delete("banana"))
-    print("Delete 'orange' (not present):", ht.delete("orange"))
+    print("\nDeleting 'banana'...")
+    ht.delete('banana')
 
-    # Print hash table state after deletions
-    print("\nHash Table after deletions:")
-    print(ht.table)
+    # Display the hash table after deletion
+    print("Hash Table After Deletion:")
+    ht.display()
