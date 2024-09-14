@@ -1,53 +1,45 @@
 # Analysis of Hash Table Operations with Chaining
 Part 2 contains the implementation of the hash table using chaining for collision resolution.
 
-- [Hash table chaining implementation](./randomized_quicksort.py)
-
-## Hash Table Output:
-
+- [Here is the hash_table_chaining.py](./hash_table_chaining.py)
+## The sample output has been tabulated below for clear understanding.
 ### Hash Table After Insertion
 
-\\begin{tabular}{|c|c|}
-\\hline
-Slot & Contents \\\\ \\hline
-0 & [] \\\\ \\hline
-1 & [] \\\\ \\hline
-2 & [] \\\\ \\hline
-3 & [] \\\\ \\hline
-4 & [] \\\\ \\hline
-5 & [('apple', 1), ('grape', 3), ('orange', 4)] \\\\ \\hline
-6 & [('banana', 2)] \\\\ \\hline
-7 & [] \\\\ \\hline
-8 & [] \\\\ \\hline
-9 & [('mango', 5)] \\\\ \\hline
-\\end{tabular}
+| Slot | Contents                               |
+|------|----------------------------------------|
+| 0    | []                                     |
+| 1    | []                                     |
+| 2    | []                                     |
+| 3    | []                                     |
+| 4    | []                                     |
+| 5    | [('apple', 1), ('grape', 3), ('orange', 4)] |
+| 6    | [('banana', 2)]                        |
+| 7    | []                                     |
+| 8    | []                                     |
+| 9    | [('mango', 5)]                         |
 
 ### Search Results
 
-\\begin{tabular}{|c|c|}
-\\hline
-Key & Result \\\\ \\hline
-'apple' & 1 \\\\ \\hline
-'banana' & 2 \\\\ \\hline
-'cherry' & None \\\\ \\hline
-\\end{tabular}
+| Key      | Result |
+|----------|--------|
+| 'apple'  | 1      |
+| 'banana' | 2      |
+| 'cherry' | None   |
 
 ### Hash Table After Deletion
 
-\\begin{tabular}{|c|c|}
-\\hline
-Slot & Contents \\\\ \\hline
-0 & [] \\\\ \\hline
-1 & [] \\\\ \\hline
-2 & [] \\\\ \\hline
-3 & [] \\\\ \\hline
-4 & [] \\\\ \\hline
-5 & [('apple', 1), ('grape', 3), ('orange', 4)] \\\\ \\hline
-6 & [] \\\\ \\hline
-7 & [] \\\\ \\hline
-8 & [] \\\\ \\hline
-9 & [('mango', 5)] \\\\ \\hline
-\\end{tabular}
+| Slot | Contents                               |
+|------|----------------------------------------|
+| 0    | []                                     |
+| 1    | []                                     |
+| 2    | []                                     |
+| 3    | []                                     |
+| 4    | []                                     |
+| 5    | [('apple', 1), ('grape', 3), ('orange', 4)] |
+| 6    | []                                     |
+| 7    | []                                     |
+| 8    | []                                     |
+| 9    | [('mango', 5)]                         |
 
 
 ## Expected Time for Search, Insert, and Delete Operations
@@ -86,4 +78,3 @@ The operations of the hash table (insert, search, and delete) run with an expect
 
 ## References
 - Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). *Introduction to Algorithms* (4th ed.). MIT Press.
-- Wikibooks. (2023). LaTeX/Mathematics. Retrieved from https://en.wikibooks.org/wiki/LaTeX/Mathematics
