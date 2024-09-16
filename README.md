@@ -22,8 +22,6 @@ This assignment contains implementations and analyzed reports for two key algori
    Replace `<filename>` with the actual name of the Python file.
 
 
-## Files in this Repository
-
 ## Files Overview
 
 | File Name                  | Description                                                                                  |
@@ -35,39 +33,6 @@ This assignment contains implementations and analyzed reports for two key algori
 | [report_part2.md](./report_part2.md)           | Detailed report analyzing the performance of the **Hashing with Chaining** algorithm, including time complexity analysis and optimization strategies. |
 
 ---
-
-
-### 1. `randomized_quicksort.py`
-This [file](randomized_quicksort.py) contains the implementation of **Randomized Quicksort**, where the pivot is chosen randomly to reduce the likelihood of worst-case performance.
-
-#### Running `randomized_quicksort.py`:
-```ruby
-python3 randomized_quicksort.py
-```
-
-
-### 2. `comparison.py`
-This [file](./comparison.py) compares the performance of **Randomized Quicksort** and **Deterministic Quicksort** on different input arrays (random, sorted, reverse-sorted, and arrays with repeated elements).
-
-#### Running `comparison.py`:
-```ruby
-python3 comparison.py
-```
-
-### 3. `hash_table_chaining.py`
-This [file](hash_table_chaining.py) implements a hash table using **chaining** for collision resolution. It supports operations such as insert, search, and delete.
-
-#### Running `hash_table_chaining.py`:
-```ruby
-python3 hash_table_chaining.py
-```
-
-### 4. `report_part1.md`
-This [report](report_part1.md) provides a detailed analysis of the **Randomized Quicksort** algorithm, including its theoretical time complexity and empirical performance comparison with Deterministic Quicksort.
-
-
-### 5. `report_part2.md`
-This [report](report_part2.md) analyzes the performance of the **Hashing with Chaining** algorithm, focusing on the time complexity of search, insert, and delete operations, and discusses strategies for maintaining efficiency.
 
 ## Summary of the Assignment
 
