@@ -1,7 +1,41 @@
 # Assignment3: Understanding ALgorithm Efficiency and Scalability
 This assignment contains implementations and analyzed reports for two key algorithms: **Randomized Quicksort** and **Hashing with Chaining**. The assignment focuses on analyzing and comparing the efficiency and scalability of these algorithms, providing both theoretical analysis and empirical results.
 
+## How to Run the Code
+
+### Requirements:
+- Python 3.x
+
+### Running the Code:
+1. Download the source code from the provided `.py` file or copy the provided code.
+2. Open a terminal or command prompt.
+3. Navigate to the directory where the `.py` file is saved.
+4. Run the Python script by typing the following command:
+   for windows:
+   ``` bash
+   python filename.py
+   ```
+   for MacOS (or Linux):
+   ``` bash
+   python3 filename.py
+   ```
+   Replace `<filename>` with the actual name of the Python file.
+
+
 ## Files in this Repository
+
+## Files Overview
+
+| File Name                  | Description                                                                                  |
+|----------------------------|----------------------------------------------------------------------------------------------|
+| [randomized_quicksort.py](./randomized_quicksort.py)   | Implements **Randomized Quicksort** with a randomly chosen pivot to avoid worst-case performance. |
+| [comparison.py](./comparison.py)             | Compares the performance of **Randomized Quicksort** and **Deterministic Quicksort** using various input arrays. |
+| [hash_table_chaining.py](./hash_table_chaining.py)    | Implements a **Hash Table with Chaining** for collision resolution, supporting insert, search, and delete operations. |
+| [report_part1.md](./report_part1.md)           | Detailed report analyzing the **Randomized Quicksort** algorithm's theoretical and empirical performance. |
+| [report_part2.md](./report_part2.md)           | Detailed report analyzing the performance of the **Hashing with Chaining** algorithm, including time complexity analysis and optimization strategies. |
+
+---
+
 
 ### 1. `randomized_quicksort.py`
 This [file](randomized_quicksort.py) contains the implementation of **Randomized Quicksort**, where the pivot is chosen randomly to reduce the likelihood of worst-case performance.
